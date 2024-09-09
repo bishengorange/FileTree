@@ -25,7 +25,7 @@ No return value. The function prints the directory structure.
 }
 \description{
 This function recursively prints the directory structure of the specified path.
-It displays the file names, file sizes, last modified date, and file type icons with colors.
+It displays the file names, file sizes, last modified date, and file type icons.
 }
 \examples{
 # Simple directory structure, sorted by name

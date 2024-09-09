@@ -1,6 +1,3 @@
-# Load the crayon package for adding color to console output
-library(crayon)
-
 # Define functions to convert file sizes to adaptive units (B, KB, MB, GB)
 format_size <- function(size_in_bytes) {
   if (size_in_bytes >= 1024^3) {
@@ -17,34 +14,34 @@ format_size <- function(size_in_bytes) {
 # Define function to get file type icon for various file types
 get_file_type_icon <- function(file_name, is_directory) {
   if (is_directory) {
-    return(blue("[DIR]"))  # Directory in blue
+    return("[DIR]")
   } else {
-    ext <- tolower(tools::file_ext(file_name))
+    ext <- tolower(tools::file_ext(file_name))  # 获取文件扩展名并转换为小写
     return(switch(ext,
-                  "txt" = green("[TXT]"),           # Text files in green
-                  "jpg" = yellow("[IMG]"),          # Images in yellow
-                  "png" = yellow("[IMG]"),
-                  "pdf" = magenta("[PDF]"),         # PDF files in magenta
-                  "R" = cyan("[R Script]"),         # R scripts in cyan
-                  "csv" = blue("[CSV]"),            # CSV files in blue
-                  "rdata" = cyan("[RData]"),        # RData in cyan
-                  "rproj" = cyan("[RProj]"),        # RProj in cyan
-                  "gz" = yellow("[GZ Archive]"),    # Compressed files in yellow
-                  "doc" = magenta("[Word]"),        # Word documents in magenta
-                  "docx" = magenta("[Word]"),
-                  "xlsx" = green("[Excel]"),        # Excel files in green
-                  "zip" = yellow("[ZIP Archive]"),  # ZIP files in yellow
-                  "tar" = yellow("[TAR Archive]"),  # TAR files in yellow
-                  "ppt" = magenta("[PowerPoint]"),  # PowerPoint files in magenta
-                  "pptx" = magenta("[PowerPoint]"),
-                  white("[FILE]")))  # Default files in white
+                  "txt" = "[TXT]",
+                  "jpg" = "[IMG]",
+                  "png" = "[IMG]",
+                  "pdf" = "[PDF]",
+                  "R" = "[R Script]",
+                  "csv" = "[CSV]",
+                  "rdata" = "[RData]",
+                  "rproj" = "[RProj]",
+                  "gz" = "[GZ Archive]",
+                  "doc" = "[Word]",
+                  "docx" = "[Word]",
+                  "xlsx" = "[Excel]",
+                  "zip" = "[ZIP Archive]",
+                  "tar" = "[TAR Archive]",
+                  "ppt" = "[PowerPoint]",
+                  "pptx" = "[PowerPoint]",
+                  "[FILE]"))  # 如果扩展名不匹配，返回默认 [FILE]
   }
 }
 
 #' Print Directory Tree Structure
 #'
 #' This function recursively prints the directory structure of the specified path.
-#' It displays the file names, file sizes, last modified date, and file type icons with colors.
+#' It displays the file names, file sizes, last modified date, and file type icons.
 #'
 #' @param dir_path A string. The directory path to be listed. Defaults to the current directory.
 #' @param prefix A string. Internal parameter used for recursion (not to be set manually by users).
@@ -94,25 +91,23 @@ print_tree <- function(dir_path = ".", prefix = "", show = 1, sort_by = "name") 
     is_last <- (i == length(files))
 
     # Print the directory tree based on the 'show' argument
-    file_name_colored <- if (is_directory) blue(file_name) else white(file_name)  # Directories in blue, files in white
-
     if (show == 1) {
       if (is_last) {
-        cat(prefix, "└──", file_icon, file_name_colored, "(", file_mtime, ")\n", sep = "")
+        cat(prefix, "└──", file_icon, file_name, "(", file_mtime, ")\n", sep = "")
       } else {
-        cat(prefix, "├──", file_icon, file_name_colored, "(", file_mtime, ")\n", sep = "")
+        cat(prefix, "├──", file_icon, file_name, "(", file_mtime, ")\n", sep = "")
       }
     } else if (show == 2) {
       if (is_last) {
-        cat(prefix, "└──", file_icon, file_name_colored, "(", format(file_size, big.mark = ",", scientific = FALSE), " bytes, ", file_mtime, ")\n", sep = "")
+        cat(prefix, "└──", file_icon, file_name, "(", format(file_size, big.mark = ",", scientific = FALSE), " bytes, ", file_mtime, ")\n", sep = "")
       } else {
-        cat(prefix, "├──", file_icon, file_name_colored, "(", format(file_size, big.mark = ",", scientific = FALSE), " bytes, ", file_mtime, ")\n", sep = "")
+        cat(prefix, "├──", file_icon, file_name, "(", format(file_size, big.mark = ",", scientific = FALSE), " bytes, ", file_mtime, ")\n", sep = "")
       }
     } else if (show == 3) {
       if (is_last) {
-        cat(prefix, "└──", file_icon, file_name_colored, "(", formatted_size, ", ", file_mtime, ")\n", sep = "")
+        cat(prefix, "└──", file_icon, file_name, "(", formatted_size, ", ", file_mtime, ")\n", sep = "")
       } else {
-        cat(prefix, "├──", file_icon, file_name_colored, "(", formatted_size, ", ", file_mtime, ")\n", sep = "")
+        cat(prefix, "├──", file_icon, file_name, "(", formatted_size, ", ", file_mtime, ")\n", sep = "")
       }
     }
 
