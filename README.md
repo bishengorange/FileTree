@@ -55,7 +55,12 @@ Example output:
 
 ## 🎨 Features
 
-✅ Recursive directory traversal ✅ File sizes in human-readable units ✅ Color-coded output by tree level ✅ Emoji icons based on file type ✅ Supports output to plain text or Markdown ✅ Customizable depth and output target
+✅ Recursive directory traversal
+✅ File sizes in human-readable units
+✅ Color-coded output by tree level
+✅ Emoji icons based on file type
+✅ Supports output to plain text or Markdown
+✅ Customizable depth and output target
 
 ## 📄 License
 
