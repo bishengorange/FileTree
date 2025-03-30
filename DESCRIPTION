@@ -1,0 +1,19 @@
+Package: FileTree
+Title: Visualize and Export File Tree Structures with Icons and Sizes
+Version: 0.0.0.9000
+Authors@R: 
+    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"))
+Description: Display and export a visual representation of a directory
+    tree, including colored output, file type icons, file sizes, and
+    customizable depth. Supports exporting to text or markdown formats and
+    recognizes a wide variety of file types including scripts, documents,
+    images, compressed files and more.
+License: MIT + file LICENSE
+Depends: 
+    R (>= 3.5.0)
+Imports: 
+    crayon
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.2
