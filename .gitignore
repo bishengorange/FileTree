@@ -1,0 +1,28 @@
+# RStudio project files
+.Rproj.user/
+*.Rproj
+
+# R build files
+*.Rhistory
+*.RData
+*.Ruserdata
+.Rapp.history
+
+# R CMD check, build artifacts
+*.tar.gz
+*.Rcheck/
+.Rinstignore
+
+# VS Code or other IDEs
+.vscode/
+*.code-workspace
+
+# Output files
+tree.txt
+*.log
+
+# OS/Editor-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
