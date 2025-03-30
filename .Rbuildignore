@@ -1,0 +1,10 @@
+^FileTree\.Rproj$
+^\.Rproj\.user$
+
+^FileTree\.Rproj$
+^\.Rproj\.user$
+^README\.md$
+^LICENSE$
+^tree\.txt$
+^.*\.log$
+^.*\.tar\.gz$
