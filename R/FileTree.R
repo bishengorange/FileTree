@@ -44,7 +44,7 @@ FileTree <- function(Path = ".", Prefix = "", Size = TRUE, Depth = Inf,
 
   Red    <- crayon::make_style("#F1441D")
   Orange <- crayon::make_style("#FFA500")
-  Yellow <- crayon::make_style("#FBDA41")
+  Yellow <- crayon::make_style("#F7D94C")
   Green  <- crayon::make_style("#20894D")
   Cyan   <- crayon::make_style("#22A2C3")
   Blue   <- crayon::make_style("#2775B6")
