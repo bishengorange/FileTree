@@ -18,7 +18,7 @@ FileTree <- function(Path = ".", Prefix = "", Size = TRUE, Depth = Inf,
   FormatSize <- function(SizeValue) {
     if (is.na(SizeValue)) return("0 B")
     if (SizeValue < 1024) return(paste(SizeValue, "B"))
-    Units <- c("KB", "MB", "GB", "TB")
+    Units <- c("KB", "MB", "GB", "TB", "PB", "EB")
     Power <- min(floor(log(SizeValue, 1024)), length(Units))
     sprintf("%.1f %s", SizeValue / (1024^Power), Units[Power])
   }
